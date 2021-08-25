@@ -1,0 +1,15 @@
+<#@ template language="C#" debug="true" hostSpecific="true" #>
+<#@ output extension=".cs" #>
+<#@ include file="$(SolutionDir)\ResourceManifestHelper.ttinclude" #>
+namespace <#= @ResolveCurrentProjectName() #>
+{    
+    using BarsUp;
+
+    internal partial class ResourceManifest : ResourceManifestBase
+    {
+		protected override void BaseInit(IResourceManifestContainer container)
+        {          
+<#          WriteBarsUpDefaultResourceRegistrations();#>
+        }        
+    }
+}

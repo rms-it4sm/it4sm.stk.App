@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Главное меню</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of mainMenuItems" (click)="mainMenuItemClick(item)">
+    <div class="card-title">
+      <ion-icon class="icon" [name]="item.icon"></ion-icon>
+    </div>
+    <ion-card-header>
+      <ion-card-title>
+        {{item.name}}
+      </ion-card-title>
+    </ion-card-header>
+  </ion-card>
+</ion-content>

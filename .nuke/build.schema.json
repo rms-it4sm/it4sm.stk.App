@@ -1,0 +1,282 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "Build Schema",
+  "$ref": "#/definitions/build",
+  "definitions": {
+    "build": {
+      "type": "object",
+      "properties": {
+        "BinaryLocation": {
+          "type": "string",
+          "description": "Рсположение яндекс-браузера"
+        },
+        "Configuration": {
+          "type": "string",
+          "description": "Конфигурация построения",
+          "enum": [
+            "Debug",
+            "Release"
+          ]
+        },
+        "Continue": {
+          "type": "boolean",
+          "description": "Indicates to continue a previously failed build attempt"
+        },
+        "DockerHost": {
+          "type": "string",
+          "description": "Адрес хоста"
+        },
+        "DockerImage": {
+          "type": "string",
+          "description": "Наименование образа"
+        },
+        "DockerProject": {
+          "type": "string",
+          "description": "Наименование проекта"
+        },
+        "DockerToken": {
+          "type": "string",
+          "description": "Токен авторизации"
+        },
+        "DockerUsername": {
+          "type": "string",
+          "description": "Имя пользователя"
+        },
+        "Experemental": {
+          "type": "boolean",
+          "description": "Использовать эксперементальные возможности"
+        },
+        "FixOnRestore": {
+          "type": "boolean",
+          "description": "Выполнить корректировку проектов перед восстановлением"
+        },
+        "Force": {
+          "type": "boolean",
+          "description": "Принудительное выполнение"
+        },
+        "Help": {
+          "type": "boolean",
+          "description": "Shows the help text for this build assembly"
+        },
+        "Host": {
+          "type": "string",
+          "description": "Host for execution. Default is 'automatic'",
+          "enum": [
+            "AppVeyor",
+            "AzurePipelines",
+            "Bamboo",
+            "Bitrise",
+            "GitHubActions",
+            "GitLab",
+            "Jenkins",
+            "SpaceAutomation",
+            "TeamCity",
+            "Terminal",
+            "TravisCI"
+          ]
+        },
+        "IisAppName": {
+          "type": "string",
+          "description": "Iis - Наименование приложения"
+        },
+        "IisPassword": {
+          "type": "string",
+          "description": "Iis - Пароль"
+        },
+        "IisPort": {
+          "type": "integer",
+          "description": "Iis - Порт WebDeploy"
+        },
+        "IisServer": {
+          "type": "string",
+          "description": "Iis - Целевой сервер"
+        },
+        "IisUser": {
+          "type": "string",
+          "description": "Iis - Имя пользователя"
+        },
+        "IisWebSite": {
+          "type": "string",
+          "description": "Iis - Наименование сайта"
+        },
+        "Login": {
+          "type": "string",
+          "description": "Логин пользователя"
+        },
+        "MyGetFeed": {
+          "type": "string",
+          "description": "Галерея для публикации (MyGet Feed)"
+        },
+        "MyGetKey": {
+          "type": "string",
+          "description": "Ключ для доступа к API MyGet"
+        },
+        "NeedGOSTencryption": {
+          "type": "string",
+          "description": "Использование шифрования по ГОСТу"
+        },
+        "NginxAppName": {
+          "type": "string",
+          "description": "Nginx - Наименование приложения"
+        },
+        "NginxPassword": {
+          "type": "string",
+          "description": "Nginx - Пароль"
+        },
+        "NginxServer": {
+          "type": "string",
+          "description": "Nginx - Целевой сервер"
+        },
+        "NginxUser": {
+          "type": "string",
+          "description": "Nginx - Имя пользователя"
+        },
+        "NoBuild": {
+          "type": "boolean",
+          "description": "Пропустить пстроение"
+        },
+        "NoLogo": {
+          "type": "boolean",
+          "description": "Disables displaying the NUKE logo"
+        },
+        "NoRestore": {
+          "type": "boolean",
+          "description": "Пропустить восстановление"
+        },
+        "Password": {
+          "type": "string",
+          "description": "Пароль пользователя"
+        },
+        "Plan": {
+          "type": "boolean",
+          "description": "Shows the execution plan (HTML)"
+        },
+        "PlatformSolutionPath": {
+          "type": "string",
+          "description": "Расположение решения Платформы"
+        },
+        "Profile": {
+          "type": "array",
+          "description": "Defines the profiles to load",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Project": {
+          "type": "string",
+          "description": "Обрабатываемый проект"
+        },
+        "Root": {
+          "type": "string",
+          "description": "Root directory during build execution"
+        },
+        "Runtime": {
+          "type": "string",
+          "description": "Целевой рантайм",
+          "enum": [
+            "Linux",
+            "Windows"
+          ]
+        },
+        "SingleFile": {
+          "type": "string",
+          "description": "Публикация в один файл",
+          "enum": [
+            "Simple",
+            "Trimmed"
+          ]
+        },
+        "Skip": {
+          "type": "array",
+          "description": "List of targets to be skipped. Empty list skips all dependencies",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Build",
+              "BuildIfForceOrNotNoBuild",
+              "BuildNoRuntime",
+              "Clean",
+              "CleanIfForceTarget",
+              "ConnectSolutions",
+              "DisconnectSolutions",
+              "Docker",
+              "Electronize",
+              "EnsureDefaults",
+              "ExpandPackagesProps",
+              "Fix",
+              "FixOnRestoreTarget",
+              "Iis",
+              "ImportPlatformSolution",
+              "ImportSolutions",
+              "Interactive",
+              "Nginx",
+              "Pack",
+              "PackagesToProjects",
+              "PublishHost",
+              "RemoveImportedSolutions",
+              "Restore",
+              "RestoreNoRuntime",
+              "RestoreProjects",
+              "RunFrontendTests",
+              "UiTsts",
+              "UpdatePackages",
+              "UpdateResourceManifests"
+            ]
+          }
+        },
+        "Target": {
+          "type": "array",
+          "description": "List of targets to be invoked. Default is '{default_target}'",
+          "items": {
+            "type": "string",
+            "enum": [
+              "Build",
+              "BuildIfForceOrNotNoBuild",
+              "BuildNoRuntime",
+              "Clean",
+              "CleanIfForceTarget",
+              "ConnectSolutions",
+              "DisconnectSolutions",
+              "Docker",
+              "Electronize",
+              "EnsureDefaults",
+              "ExpandPackagesProps",
+              "Fix",
+              "FixOnRestoreTarget",
+              "Iis",
+              "ImportPlatformSolution",
+              "ImportSolutions",
+              "Interactive",
+              "Nginx",
+              "Pack",
+              "PackagesToProjects",
+              "PublishHost",
+              "RemoveImportedSolutions",
+              "Restore",
+              "RestoreNoRuntime",
+              "RestoreProjects",
+              "RunFrontendTests",
+              "UiTsts",
+              "UpdatePackages",
+              "UpdateResourceManifests"
+            ]
+          }
+        },
+        "URL": {
+          "type": "string",
+          "description": "URL приложения"
+        },
+        "Verbosity": {
+          "type": "string",
+          "description": "Logging verbosity during build execution. Default is 'Normal'",
+          "enum": [
+            "Minimal",
+            "Normal",
+            "Quiet",
+            "Verbose"
+          ]
+        }
+      }
+    }
+  }
+}

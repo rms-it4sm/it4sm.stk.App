@@ -1,0 +1,117 @@
+﻿<Project>
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <DisableImplicitFrameworkReferences>false</DisableImplicitFrameworkReferences>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreUseStaticGraphEvaluation>true</RestoreUseStaticGraphEvaluation>
+    <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
+    <RuntimeIdentifiers>win10-x64;linux-x64</RuntimeIdentifiers>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <!-- NU1605 - package downgrade-->
+    <!-- CS1591 - missing xml comment-->
+    <!-- CS1570 - XML comment on 'construct' has badly formed XML -->
+    <!-- CS1571 - XML comment on 'construct' has a duplicate param tag for 'parameter' -->
+    <!-- CS1572 - XML comment on 'construct' has a param tag for 'parameter', but there is no parameter by that name-->
+    <!-- CS1573 - Parameter 'parameter' has no matching param tag in the XML-->
+    <!-- CS0105 - The using directive for 'namespace' appeared previously in this namespace-->
+    <!-- CS0618 - 'member' is obsolete -->
+    <NoWarn>$(NoWarn),NU1605,CS1591,CS1570,CS1571,CS1572,CS1573,CS0105</NoWarn>
+    <!-- CS1998 - This async method lacks 'await' -->
+    <!-- CS0618 - 'member' is obsolete -->
+    <!-- CS0108 - 'member1' hides inherited member 'member2'. -->
+    <!-- CS0109 - 'member1' hides inherited member 'member2'. -->
+    <!-- CS0114 - 'function1' hides inherited member 'function2'. -->
+    <!-- LindhartAnalyserMissingAwaitWarning - Task который не ждут -->
+    <WarningsAsErrors>$(WarningsAsErrors),MSB4019,CS1998,LindhartAnalyserMissingAwaitWarning</WarningsAsErrors>
+    <DefaultItemExcludes>$(DefaultItemExcludes);**\node_modules\**\*</DefaultItemExcludes>
+    <Deterministic>false</Deterministic>
+    <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+    <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+    <RepositoryUrl>https://github.com:443/rms-it4sm/it4sm.stk.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Copyright>ЗАО БАРС Груп © 2020</Copyright>
+    <Authors>ЗАО БАРС Груп</Authors>
+    <Owners>ЗАО БАРС Груп</Owners>
+    <Product>Платформа "BarsUp.Net"</Product>
+    <PackageTags>$(PackageTags);barsup;barsup.net;barsup.designer</PackageTags>
+    <IncludeSymbols>true</IncludeSymbols>
+    <AssemblyTitle>$(Title)</AssemblyTitle>
+    <AssemblyDescription>$(Description)</AssemblyDescription>
+    <AssemblyProduct>$(Product)</AssemblyProduct>
+    <AssemblyCompany>$(Authors)</AssemblyCompany>
+    <AssemblyCopyright>$(Copyright)</AssemblyCopyright>
+    <ComVisible>false</ComVisible>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyFileVersion>$(AssemblyVersion)</AssemblyFileVersion>
+    <AssemblyInformationalVersion>$(AssemblyVersion)</AssemblyInformationalVersion>
+    <LangVersion>latest</LangVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" Condition="Exists('Properties\')" />
+    <Compile Include="$(SolutionDir)\CommonAssemblyVersion.cs" Link="Properties\CommonAssemblyVersion.cs" Condition="Exists('$(SolutionDir)\CommonAssemblyVersion.cs')" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="ResourceManifest.cs" Condition="Exists('ResourceManifest.cs')">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="ResourceManifest.*.cs" Condition="Exists('ResourceManifest.cs')">
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceManifest.cs</DependentUpon>
+    </Compile>
+    <None Remove="ResourceManifest.json" Condition="Exists('ResourceManifest.json')" />
+    <EmbeddedResource Include="ResourceManifest.json" Condition="Exists('ResourceManifest.json') and Exists('ResourceManifest.cs')">
+      <DependentUpon>ResourceManifest.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Update="ResourceManifest.tt" Condition="Exists('ResourceManifest.tt')">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ResourceManifest.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="node_modules\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="embedded\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="node_modules\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="libs\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="content\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="icons\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="Views\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="scripts\**" Condition="$(EnableDefaultItems)" />
+    <None Remove="Migrations\**\*.sql" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="embedded\**" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include=".bundle\*.all.js" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include=".bundle\*.all.min.js" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="libs\**" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="content\**" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="icons\**" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="Views\**" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="scripts\**" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="Migrations\**\*.sql" Condition="$(EnableDefaultItems)" />
+    <EmbeddedResource Include="Components\**\UI\**" Condition="$(EnableDefaultItems)" />
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+</Project>

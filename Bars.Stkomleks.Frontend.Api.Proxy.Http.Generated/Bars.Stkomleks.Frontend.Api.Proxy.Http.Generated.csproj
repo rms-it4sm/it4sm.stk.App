@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Title>Стройкомлекс [Frontend.Api.Proxy.Http]</Title>
+    <Description>Проект модуля [Стройкомлекс]</Description>
+    <RepositoryUrl>https://github.com/rms-it4sm/it4sm.stk.App.git</RepositoryUrl>
+    <BarsUpProjectGenerationKind>Always</BarsUpProjectGenerationKind>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(ProjectDir)..\</SolutionDir>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)..\BarsUp.Common.Lib.props" />
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Stkomleks.Frontend.Abstractions.Generated\Bars.Stkomleks.Frontend.Abstractions.Generated.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
+      <_Parameter1>e1e2ac5e-d8e5-51b1-3f42-0cad5acd4099</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup Label="Package References">
+    <PackageReference Include="BarsUp.Designer.GeneratedApp" Version="5.2.6686" />
+    <PackageReference Include="Lindhart.Analyser.MissingAwaitWarning" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Title>Стройкомлекс [Core] (Генерируемый проект)</Title>
+    <Description>Проект модуля [Стройкомлекс]</Description>
+    <RepositoryUrl>https://github.com/rms-it4sm/it4sm.stk.App.git</RepositoryUrl>
+    <BarsUpProjectGenerationKind>Always</BarsUpProjectGenerationKind>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(ProjectDir)..\</SolutionDir>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)..\BarsUp.Common.Lib.props" />
+  <ItemGroup>
+    <AssemblyAttribute Include="BarsUp.Ecm7.Framework.MigrationModuleAttribute">
+      <_Parameter1>Bars.Stkomleks</_Parameter1>
+    </AssemblyAttribute>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Bars.Stkomleks.Core</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
+      <_Parameter1>9bc53c36-6a42-9118-911a-7b58501925b8</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup Label="Package References">
+    <PackageReference Include="BarsUp.Designer.Core" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Core" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.Security" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.DataAccess" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.Mapping.NHibernate" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.PostgreSql" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.ChangeRequest" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.Versioning" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.Workflow.Generated" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.EntityVersioning" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.Fias" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.RuntimeFilters" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Designer.GeneratedApp" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.DataView" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.Leaflet" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.FileSystemStorage" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Modules.FTPStorage" Version="5.2.6686" />
+    <PackageReference Include="Lindhart.Analyser.MissingAwaitWarning" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+  </ItemGroup>
+</Project>

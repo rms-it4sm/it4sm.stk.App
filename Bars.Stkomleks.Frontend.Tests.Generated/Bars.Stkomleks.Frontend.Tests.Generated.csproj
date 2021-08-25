@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Title>Стройкомлекс [Frontend.Tests] (Генерируемый проект)</Title>
+    <Description>Проект модуля [Стройкомлекс]</Description>
+    <RepositoryUrl>https://github.com/rms-it4sm/it4sm.stk.App.git</RepositoryUrl>
+    <BarsUpProjectGenerationKind>Always</BarsUpProjectGenerationKind>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(ProjectDir)..\</SolutionDir>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)..\BarsUp.Common.Test.props" />
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Stkomleks.Frontend\Bars.Stkomleks.Frontend.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Bars.Stkomleks.Frontend.Tests</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
+      <_Parameter1>a30ed3f9-5a76-4234-4235-d88c98f0161a</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup Label="Package References">
+    <PackageReference Include="BarsUp.Designer.Core" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.QualityAssurance.Web" Version="5.2.6686" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.console" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
+    <PackageReference Include="Lindhart.Analyser.MissingAwaitWarning" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Title>BarsUp.Cli</Title>
+    <Description>Инструменты командной строки</Description>
+    <RootNamespace>BarsUp.Cli</RootNamespace>
+    <!-- NUKE CONFIGURATION -->
+    <NukeVersion>*</NukeVersion>
+    <NukeCodeGeneration>False</NukeCodeGeneration>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(ProjectDir)..\</SolutionDir>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)..\BarsUp.Common.Host.props" />
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" Condition="Exists('..\CommonAssemblyInfo.cs')" />
+  </ItemGroup>
+  <ItemGroup>
+    <NukeMetadata Include="**/*.json" Exclude="bin/**;obj/**" />
+    <None Remove="*.csproj.DotSettings;*.ref.*.txt" />
+    <None Remove="build.config.json" />
+    <None Remove="build.config.local.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="build.config.json" Condition="Exists('build.config.json')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="build.config.local.json" Condition="Exists('build.config.local.json')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Label="Package References">
+    <PackageReference Include="BarsUp.Build" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Build.Deploy" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Build.Electron" Version="5.2.6686" />
+    <PackageReference Include="LibGit2Sharp" Version="0.26.2" />
+    <PackageReference Include="Lindhart.Analyser.MissingAwaitWarning" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+  </ItemGroup>
+</Project>

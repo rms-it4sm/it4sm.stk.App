@@ -1,0 +1,42 @@
+namespace Bars.Stkomleks.Mappings
+{
+    using NHibernate;
+    using NHibernate.Type;
+    using NHibernate.Mapping.ByCode;    
+    using NHibernate.Mapping.ByCode.Conformist;    
+    using BarsUp.DataAccess;
+    
+    using BarsUp.DataAccess.ByCode;
+    using BarsUp.DataAccess.UserTypes; 
+    using BarsUp.Designer.GeneratedApp;
+    using BarsUp.Designer.Core;
+    using BarsUp.Designer.Core.TypeSystem;
+    using BarsUp.Modules.PostgreSql.DataAccess.UserTypes;
+    using BarsUp.Modules.Versioning.Map;
+
+    /// <summary>
+    /// Мапинг сущности Профили организаций
+    /// </summary>
+    public class ProfilesOrganizationsMap : ClassMapping<Bars.Stkomleks.ProfilesOrganizations>
+    {
+        /// <summary>
+        /// Конструктор
+        /// </summary>
+        public ProfilesOrganizationsMap()         {
+			Polymorphism(PolymorphismType.Explicit);
+            Table("PROFILESORGANIZATIONS");
+            
+            Id(x => x.Id, map => { 
+    map.Column("id");
+    map.Type(new Int64Type());
+    map.Generator(new BarsUp.Modules.NH.IdGenerators.BulkSeq.BulkSequenceIdGeneratorDef());
+ });
+            
+#region Class: ProfilesOrganizations
+Property(x => x.Name, p => { p.Column(col => { col.Name("NAME");});});
+#endregion
+        }
+    }
+
+    }
+

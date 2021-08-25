@@ -1,0 +1,8 @@
+{
+  "name": "barsup.it4sm.stk",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,12 @@
+﻿<Project>
+  <Import Project="$(ProjectDir)BarsUp.Common.Lib.props" />
+  <Import Project="$(ProjectDir)BarsUp.Common.Local.props" Condition="Exists('$(ProjectDir)BarsUp.Common.Local.props')" />
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
+  </ItemGroup>
+</Project>

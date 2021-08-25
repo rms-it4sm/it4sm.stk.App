@@ -1,0 +1,13 @@
+{
+  "appId": "com.barsup.it4sm.stk",
+  "appName": "barsup.it4sm.stk",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

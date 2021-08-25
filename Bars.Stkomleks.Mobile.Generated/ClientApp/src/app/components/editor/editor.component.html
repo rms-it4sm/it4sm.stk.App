@@ -1,0 +1,5 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<div *ngIf="!isLoading" style="height: 100%;">
+  <ng-content></ng-content>
+</div>

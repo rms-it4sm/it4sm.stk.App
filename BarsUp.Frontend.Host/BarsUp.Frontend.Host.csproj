@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <NoWarn>$(NoWarn);NU1605;CS1591;</NoWarn>
+    <TargetFramework>net5.0</TargetFramework>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(ProjectDir)..\</SolutionDir>
+  </PropertyGroup>
+  <Import Project="$(SolutionDir)\BarsUp.Common.Host.props" />
+  <ItemGroup>
+    
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Stkomleks.Core\Bars.Stkomleks.Core.csproj"><Project>{85092341-9295-88D6-9783-ADA93EEA408C}</Project><Name>Bars.Stkomleks.Core</Name></ProjectReference>
+<ProjectReference Include="..\Bars.Stkomleks.Frontend.Api.Proxy.Http.Generated\Bars.Stkomleks.Frontend.Api.Proxy.Http.Generated.csproj"><Project>{E1E2AC5E-D8E5-51B1-3F42-0CAD5ACD4099}</Project><Name>Bars.Stkomleks.Frontend.Api.Proxy.Http.Generated</Name></ProjectReference>
+<ProjectReference Include="..\Bars.Stkomleks.Frontend.Api\Bars.Stkomleks.Frontend.Api.csproj"><Project>{3C51E019-88F5-41C5-A2FD-94A219AD4F34}</Project><Name>Bars.Stkomleks.Frontend.Api</Name></ProjectReference>
+<ProjectReference Include="..\Bars.Stkomleks.Frontend\Bars.Stkomleks.Frontend.csproj"><Project>{4EFAAE9E-8069-DDED-E3F5-7F302D11CF88}</Project><Name>Bars.Stkomleks.Frontend</Name></ProjectReference>
+
+  </ItemGroup>
+</Project>

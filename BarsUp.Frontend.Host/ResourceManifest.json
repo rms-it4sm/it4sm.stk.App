@@ -1,0 +1,10 @@
+{
+  "Workspaces": {
+    "Login": {
+      "Viewport": [
+        "content/login/*/*",
+        "content/login/*/*/*"
+      ]
+    }
+  }
+}

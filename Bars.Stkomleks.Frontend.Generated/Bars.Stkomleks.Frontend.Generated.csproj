@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <Title>Стройкомлекс [Frontend] (Генерируемый проект)</Title>
+    <Description>Проект модуля [Стройкомлекс]</Description>
+    <RepositoryUrl>https://github.com/rms-it4sm/it4sm.stk.App.git</RepositoryUrl>
+    <BarsUpProjectGenerationKind>Always</BarsUpProjectGenerationKind>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(ProjectDir)..\</SolutionDir>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)..\BarsUp.Common.Lib.props" />
+  <ItemGroup>
+    <ProjectReference Include="..\Bars.Stkomleks.Core.Generated\Bars.Stkomleks.Core.Generated.csproj" />
+    <ProjectReference Include="..\Bars.Stkomleks.Frontend.Abstractions.Generated\Bars.Stkomleks.Frontend.Abstractions.Generated.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+      <_Parameter1>Bars.Stkomleks.Frontend</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Runtime.InteropServices.GuidAttribute">
+      <_Parameter1>6c2c2619-e141-b277-2c87-6a2487fb86d1</_Parameter1>
+    </AssemblyAttribute>
+  </ItemGroup>
+  <ItemGroup Label="Package References">
+    <PackageReference Include="BarsUp.Designer.Core" Version="5.2.6686" />
+    <PackageReference Include="BarsUp.Designer.GeneratedApp" Version="5.2.6686" />
+    <PackageReference Include="Lindhart.Analyser.MissingAwaitWarning" Version="2.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
+  </ItemGroup>
+</Project>

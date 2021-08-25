@@ -1,0 +1,1 @@
+npm i && node copy_custom.js && ionic build && npx jetify && npx cap sync && npm run resources && cd android && gradlew assembleDebug && gradlew assembleRelease

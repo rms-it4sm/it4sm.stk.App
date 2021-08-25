@@ -1,0 +1,13 @@
+<ion-item>
+  <div class="holder">
+    <div [style.fontSize]="valueModel ? '13px' : '17px'" class="label">
+      {{label}}
+    </div>
+    <div *ngIf="valueModel" style="font-size: 17px">
+      {{valueModel.Name}}
+    </div>
+  </div>
+  <ion-icon name="ellipsis-horizontal-circle-outline" slot="end" size="medium" (click)="openSelectorAsync()"></ion-icon>
+  <ion-icon *ngIf="valueModel" name="arrow-down-circle-outline" slot="end" size="medium" (click)="downloadAsync()"></ion-icon>
+  <ion-icon *ngIf="valueModel" name="close-outline" slot="end" size="medium" (click)="clear()"></ion-icon>
+</ion-item>

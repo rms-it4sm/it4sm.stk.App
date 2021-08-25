@@ -1,0 +1,5 @@
+<ion-item color="primary">
+  <img *ngIf="image" class='card-img' src={{image}} slot="start">
+  <ion-icon *ngIf="!image" name="person" slot="start"></ion-icon>
+  <p>{{name}}</p>
+</ion-item>

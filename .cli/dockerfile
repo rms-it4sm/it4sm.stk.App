@@ -1,0 +1,24 @@
+FROM ubuntu:20.04
+WORKDIR /usr/src/solution_folder
+
+RUN apt-get update -y
+RUN apt-get upgrade -y
+
+RUN apt-get -y install sudo
+RUN useradd -m docker && echo "docker:docker" | chpasswd && adduser docker sudo
+
+RUN sudo apt-get install wget -y
+RUN sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN sudo dpkg -i packages-microsoft-prod.deb
+RUN sudo apt-get update -y
+RUN sudo apt-get install -y apt-transport-https && sudo apt-get update && sudo apt-get install -y dotnet-sdk-3.1
+
+ADD . .
+
+ARG HOST_FILE_NAME
+ENV HOST_FILE_PATH = ./$HOST_FILE_NAME
+
+ARG APP_SETTINGS_PATH=./appsettings.json
+RUN if [ -e "$APP_SETTINGS_PATH" ] ; then sed -i 's/localhost/0.0.0.0/g' $APP_SETTINGS_PATH ; fi
+
+ENTRYPOINT sudo $HOST_FILE_PATH

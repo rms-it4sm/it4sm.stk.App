@@ -1,0 +1,9 @@
+﻿<Project>
+  <Import Project="$(ProjectDir)BarsUp.Common.props" />
+  <Import Project="$(ProjectDir)BarsUp.Common.Local.props" Condition="Exists('$(ProjectDir)BarsUp.Common.Local.props')" />
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+</Project>

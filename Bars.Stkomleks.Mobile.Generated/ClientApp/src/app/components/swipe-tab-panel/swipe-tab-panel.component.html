@@ -1,0 +1,5 @@
+<div #divcontainer (swipe)="swipe($event)" style="height: 100%;">
+  <mat-tab-group mat-align-tabs="center" animationDuration="200ms" [(selectedIndex)]="selectedTab">
+    <ng-content></ng-content>
+  </mat-tab-group>
+</div>

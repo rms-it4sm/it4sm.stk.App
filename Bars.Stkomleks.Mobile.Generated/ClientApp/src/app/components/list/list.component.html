@@ -1,0 +1,17 @@
+<div class="list-content">
+    <ion-searchbar animated placeholder="Поиск" (ionChange)="search()" (ionClear)="searchValue = ''"
+        [(ngModel)]="searchValue" debounce="1200"></ion-searchbar>
+
+    <div *ngIf="!data.length && dataLoaded" class="center-screen ion-margin-top">
+        Нет данных
+    </div>
+
+    <div>
+        <ng-content></ng-content>
+    </div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadDataAsync($event)">
+        <ion-infinite-scroll-content>
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</div>

@@ -1,0 +1,33 @@
+<ion-app>
+  <ion-menu disabled={{menuDisabled}}>
+    <ion-header>
+      <ion-toolbar color="primary">
+
+        <app-current-user class="header-user">
+        </app-current-user>
+
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+          <ion-item [routerDirection]="'root'" [routerLink]="[p.route]">
+            <ion-icon slot="start" [name]="p.icon" color="primary"></ion-icon>
+            <ion-label>
+              {{p.name}}
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+
+      <ion-item (click)="exitAsyn()" class="ion-margin-top">
+        <ion-icon slot="start" name="exit-outline" color="primary"></ion-icon>
+        <ion-label>
+          Выйти
+        </ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main></ion-router-outlet>
+</ion-app>

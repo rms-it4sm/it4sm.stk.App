@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <barsup-list #list [apiControllerName]="apiControllerName" [searchField]="displayField" [(data)]="data">
+    <ion-card *ngFor="let record of data" (click)="onSelect(record)">
+      <ion-card-header>
+        <ion-card-title>
+          {{record[displayField]}}
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
+  </barsup-list>
+</ion-content>
