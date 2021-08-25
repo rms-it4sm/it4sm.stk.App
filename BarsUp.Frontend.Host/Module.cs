@@ -19,7 +19,11 @@ namespace BarsUp.Frontend.Host
         protected override void SetDependencies()
         {
             base.SetDependencies();
-            
+            DependsOn<Bars.Stkomleks.Core.Module>();
+DependsOn<Bars.Stkomleks.Frontend.Api.Module>();
+DependsOn<Bars.Stkomleks.Frontend.Api.Proxy.Http.Generated.Module>();
+DependsOn<Bars.Stkomleks.Frontend.Module>();
+
             
             SetDependenciesPartial();
         }
